@@ -15,8 +15,8 @@ avatar: "/assets/img/avatar-icon.png"
 # Global colors (affect CSS variables in `assets/css/beautifuljekyll.css`)
 # `--link-col` controls regular link color, `--hover-col` controls hover color.
 link-col: "#B22222"       # firebrick (weihnachtliches Rot)
-hover-col: "#0B3D91"      # Nachthimmelblau (Hover-Farbe)
-footer-hover-col: "#0B3D91"
+hover-col: "#8B0000"      # darkred (Hover-Farbe)
+footer-hover-col: "#8B0000"
 
 # Show `site.title` appended to page titles (e.g. "Advent 2025 | Advent")
 title-on-all-pages: true

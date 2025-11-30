@@ -5,6 +5,14 @@
   {%- if firstseg and firstseg != "" and site.data.sites[firstseg] -%}
     {%- assign key = firstseg -%}
   {%- endif -%}
+  {%- if key == nil or key == "" -%}
+    {%- for p in site.posts -%}
+      {%- if p.url == page.url and p.calendar -%}
+        {%- assign key = p.calendar -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
 {%- endif -%}
 {%- assign siteinfo = site.data.sites[key] -%}
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
