@@ -15,6 +15,21 @@
   {%- endif -%}
 {%- endif -%}
 {%- assign siteinfo = site.data.sites[key] -%}
+{%- assign avatar = siteinfo.avatar | default: site.avatar -%}
+{%- comment -%}
+Determine whether the collapsed navbar has content besides the search (links, extra includes, or avatar).
+If not, we'll hide the hamburger toggler on small screens and show a mobile search button instead.
+{%- endcomment -%}
+{%- assign has_nav_content = false -%}
+{%- if site.navbar-links and site.navbar-links != empty -%}
+  {%- assign has_nav_content = true -%}
+{%- endif -%}
+{%- if site.navbar-extra -%}
+  {%- assign has_nav_content = true -%}
+{%- endif -%}
+{%- if avatar -%}
+  {%- assign has_nav_content = true -%}
+{%- endif -%}
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
 
   {%- if siteinfo and siteinfo['title-img'] -%}
@@ -27,9 +42,17 @@
     <a class="navbar-brand" href="{% if siteinfo and siteinfo.baseurl %}{{ siteinfo.baseurl | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ site.title }}</a>
   {%- endif -%}
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  {%- if has_nav_content -%}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  {%- else -%}
+    {%- if site.post_search -%}
+      <a class="nav-link nav-search-trigger d-xl-none" id="nav-search-link-mobile" href="#" title="Suche">
+        <span class="fa fa-search"></span>
+      </a>
+    {%- endif -%}
+  {%- endif -%}
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
@@ -55,7 +78,7 @@
       {% endunless %}
       {% if site.post_search %}
         <li class="nav-item">
-          <a class="nav-link" id="nav-search-link" href="#" title="Suche">
+          <a class="nav-link nav-search-trigger" id="nav-search-link" href="#" title="Suche">
             <span id="nav-search-icon" class="fa fa-search"></span>
             <span id="nav-search-text">Suche</span>
           </a>
