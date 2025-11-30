@@ -4,7 +4,12 @@ layout: page
 
 {{ content }}
 
-{% assign posts = paginator.posts | default: site.posts %}
+{% assign key = page.site_key | default: nil %}
+{% if key %}
+  {% assign posts = site.posts | where: "calendar", key %}
+{% else %}
+  {% assign posts = paginator.posts | default: site.posts %}
+{% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
 <ul class="posts-list list-unstyled" role="list">

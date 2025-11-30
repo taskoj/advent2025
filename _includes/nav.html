@@ -1,6 +1,11 @@
+{% assign siteinfo = site.data.sites[page.site_key] %}
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
 
-  {%- if site.title-img -%}
+  {%- if siteinfo and siteinfo['title-img'] -%}
+    <a class="navbar-brand navbar-brand-logo" href="{{ siteinfo.baseurl | relative_url }}"><img alt="{{ siteinfo.title }} Logo" src="{{ siteinfo['title-img'] | relative_url}}"/></a>
+  {%- elsif siteinfo and siteinfo.title -%}
+    <a class="navbar-brand" href="{{ siteinfo.baseurl | relative_url }}">{{ siteinfo.title }}</a>
+  {%- elsif site.title-img -%}
     <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
   {%- elsif site.title -%}
     <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
@@ -12,6 +17,7 @@
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
+      {% unless page.site_key %}
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
           <li class="nav-item dropdown">
@@ -30,6 +36,7 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
+      {% endunless %}
       {% if site.post_search %}
         <li class="nav-item">
           <a class="nav-link" id="nav-search-link" href="#" title="Search">
@@ -47,11 +54,12 @@
     {% endfor %}
   {% endif %}
 
-  {% if site.avatar and page.show-avatar != false %}
+  {% assign avatar = siteinfo.avatar | default: site.avatar %}
+  {% if avatar and page.show-avatar != false %}
     <div class="avatar-container">
       <div class="avatar-img-border">
-        <a href="{{ '/' | absolute_url }}">
-          <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
+        <a href="{{ siteinfo.baseurl | relative_url | default: '/' }}">
+          <img alt="Navigation bar avatar" class="avatar-img" src="{{ avatar | relative_url }}" />
         </a>
       </div>
     </div>
