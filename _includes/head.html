@@ -66,6 +66,29 @@
   {% include cloudflare_analytics.html %}
   {% include mathjax.html %}
 
+  {%- comment -%}
+  Inject per-site CSS variables when the page belongs to a subsite. We try
+  `page.site_key`, and if that's missing infer the first path segment (e.g. /henri/).
+  {%- endcomment -%}
+  {%- assign key = page.site_key -%}
+  {%- if key == nil or key == "" -%}
+    {%- assign urlparts = page.url | split:'/' -%}
+    {%- assign firstseg = urlparts[1] -%}
+    {%- if firstseg and firstseg != "" and site.data.sites[firstseg] -%}
+      {%- assign key = firstseg -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- assign siteinfo = site.data.sites[key] -%}
+  {%- if siteinfo -%}
+  <style>
+    :root {
+      --link-col: {{ siteinfo.css['link-col'] | default: site.link-col | default: "#B22222" }};
+      --hover-col: {{ siteinfo.css['hover-col'] | default: site.hover-col | default: "#0B3D91" }};
+      --footer-hover-col: {{ siteinfo.css['hover-col'] | default: site.footer-hover-col | default: "#0B3D91" }};
+    }
+  </style>
+  {%- endif -%}
+
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
       {% include ext-css.html css=css %}

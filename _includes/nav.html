@@ -1,4 +1,12 @@
-{% assign siteinfo = site.data.sites[page.site_key] %}
+{%- assign key = page.site_key -%}
+{%- if key == nil or key == "" -%}
+  {%- assign urlparts = page.url | split:'/' -%}
+  {%- assign firstseg = urlparts[1] -%}
+  {%- if firstseg and firstseg != "" and site.data.sites[firstseg] -%}
+    {%- assign key = firstseg -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign siteinfo = site.data.sites[key] -%}
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
 
   {%- if siteinfo and siteinfo['title-img'] -%}
@@ -17,7 +25,7 @@
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto">
-      {% unless page.site_key %}
+      {% unless key %}
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
           <li class="nav-item dropdown">
@@ -58,7 +66,7 @@
   {% if avatar and page.show-avatar != false %}
     <div class="avatar-container">
       <div class="avatar-img-border">
-        <a href="{{ siteinfo.baseurl | relative_url | default: '/' }}">
+        <a href="{% if siteinfo and siteinfo.baseurl %}{{ siteinfo.baseurl | relative_url }}{% else %}{{ site.baseurl | relative_url }}{% endif %}">
           <img alt="Navigation bar avatar" class="avatar-img" src="{{ avatar | relative_url }}" />
         </a>
       </div>
