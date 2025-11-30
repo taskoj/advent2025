@@ -2,6 +2,10 @@
 layout: base
 ---
 
+{%- if page.calendar -%}
+  {%- assign page.site_key = page.calendar -%}
+{%- endif -%}
+
 {% include header.html type="post" %}
 
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
