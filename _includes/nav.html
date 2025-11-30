@@ -42,16 +42,10 @@ If not, we'll hide the hamburger toggler on small screens and show a mobile sear
     <a class="navbar-brand" href="{% if siteinfo and siteinfo.baseurl %}{{ siteinfo.baseurl | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ site.title }}</a>
   {%- endif -%}
 
-  {%- if has_nav_content -%}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  {%- else -%}
-    {%- if site.post_search -%}
-      <a class="nav-link nav-search-trigger d-xl-none" id="nav-search-link-mobile" href="#" title="Suche">
-        <span class="fa fa-search"></span>
-      </a>
-    {%- endif -%}
+  {%- if site.post_search -%}
+    <a class="nav-link nav-search-trigger d-xl-none" id="nav-search-link-mobile" href="#" title="Suche">
+      <span class="fa fa-search"></span>
+    </a>
   {%- endif -%}
 
   <div class="collapse navbar-collapse" id="main-navbar">
