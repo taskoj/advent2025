@@ -1,5 +1,19 @@
 {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
 
+{%- comment -%}
+Try to determine the current site key (page.site_key or first URL segment)
+so we can use per-site metadata like `description` as a subtitle fallback.
+{%- endcomment -%}
+{%- assign key = page.site_key -%}
+{%- if key == nil or key == "" -%}
+  {%- assign urlparts = page.url | split:'/' -%}
+  {%- assign firstseg = urlparts[1] -%}
+  {%- if firstseg and firstseg != "" and site.data.sites[firstseg] -%}
+    {%- assign key = firstseg -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign siteinfo = site.data.sites[key] -%}
+
 {% if page.cover-img %}
   <div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
     {% for bigimg in page.cover-img %}
@@ -30,6 +44,13 @@
               <span class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</span>
             {% else %}
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
+            {% endif %}
+          {% elsif siteinfo and siteinfo.description %}
+            {% if include.type == "page" %}
+              <hr class="small">
+              <span class="{{ include.type }}-subheading">{{ siteinfo.description | strip_html }}</span>
+            {% else %}
+              <h2 class="{{ include.type }}-subheading">{{ siteinfo.description | strip_html }}</h2>
             {% endif %}
           {% endif %}
           

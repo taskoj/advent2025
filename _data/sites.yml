@@ -1,5 +1,5 @@
 henri:
-  title: "Adventskalender für Henri"
+  title: "Advent"
   description: "Beiträge für Henri"
   baseurl: "/henri/"
   css:
@@ -8,7 +8,7 @@ henri:
   avatar: "/assets/img/avatar-icon.png"
 
 fiona:
-  title: "Adventskalender für Fiona"
+  title: "Advent"
   description: "Beiträge für Fiona"
   baseurl: "/fiona/"
   css:
@@ -17,7 +17,7 @@ fiona:
   avatar: "/assets/img/avatar-icon.png"
 
 melanie:
-  title: "Adventskalender für Melanie"
+  title: "Advent"
   description: "Beiträge für Melanie"
   baseurl: "/melanie/"
   css:
