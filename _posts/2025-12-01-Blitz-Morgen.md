@@ -16,12 +16,10 @@ Heute testest du eine Mini-Morgenroutine, die nur ein paar Minuten dauert – ab
 1. **Wasser-Alarm**
    Direkt nach dem Aufstehen ein Glas Wasser trinken.  
    Weckt Körper UND Kopf.
-
 2. **Strecken & Atmen (1 Minute)**
    - Arme nach oben strecken
    - Schultern kreisen
    - 5 tiefe Atemzüge: langsam durch die Nase ein, durch den Mund aus
-
 3. **Tages-Satz**
    Schreib einen Satz auf einen Zettel:  
    *„Heute ist mir wichtig: …“*  
