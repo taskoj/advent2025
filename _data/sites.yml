@@ -4,7 +4,7 @@ henri:
   baseurl: "/henri/"
   css:
     link-col: "#B22222"
-    hover-col: "#0B3D91"
+    hover-col: "#8B0000"
   avatar: "/assets/img/avatar-icon.png"
 
 fiona:
@@ -13,7 +13,7 @@ fiona:
   baseurl: "/fiona/"
   css:
     link-col: "#B22222"
-    hover-col: "#0B3D91"
+    hover-col: "#8B0000"
   avatar: "/assets/img/avatar-icon.png"
 
 melanie:
@@ -22,5 +22,5 @@ melanie:
   baseurl: "/melanie/"
   css:
     link-col: "#B22222"
-    hover-col: "#0B3D91"
+    hover-col: "#8B0000"
   avatar: "/assets/img/avatar-icon.png"

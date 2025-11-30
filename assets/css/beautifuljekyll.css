@@ -221,6 +221,23 @@ img {
   color: var(--navbar-text-col);
 }
 
+/* Such-Icon in der Navbar wie die Überschrift/Home-Brand einfärben */
+.navbar-custom .nav-search-trigger {
+  font-family: var(--header-font);
+  font-weight: 800;
+  color: var(--navbar-text-col);
+  line-height: 1.5;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  font-size: 1.125rem;  /* wie .navbar-brand */
+}
+
+/* Hover/Fokus wie bei den anderen Navbar-Links */
+.navbar-custom .nav-search-trigger:hover,
+.navbar-custom .nav-search-trigger:focus {
+  color: var(--hover-col);
+}
+
 .navbar-toggler {
   font-size: 1rem;
   margin: 0.5rem 0;
@@ -588,6 +605,12 @@ footer .footer-custom-content {
 
 .post-preview .post-read-more {
   font-weight: 800;
+  color: #B22222;         /* normal: rot */
+}
+
+.post-preview .post-read-more:hover,
+.post-preview .post-read-more:focus {
+  color: #8B0000;         /* Hover/Fokus: dunkelrot */
 }
 
 @media (min-width: 768px) {
