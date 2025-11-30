@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Adventskalender 2025"
+title: "Advent 2025"
 permalink: /
 ---
 
