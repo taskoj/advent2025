@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Gemeinsam statt allein - Netzwerke

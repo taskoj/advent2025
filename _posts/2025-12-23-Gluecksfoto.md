@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: Glücks-Foto-Challenge

@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Globale Ungleichheit – und ich?

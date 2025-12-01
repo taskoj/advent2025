@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Dankbarkeit & Privilegien-Check 2.0

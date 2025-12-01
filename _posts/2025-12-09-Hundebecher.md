@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: Hunde-Schnüffelspiel mit Bechern

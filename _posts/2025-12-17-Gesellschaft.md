@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Dein Mini-Forschungsprojekt zur Gesellschaft

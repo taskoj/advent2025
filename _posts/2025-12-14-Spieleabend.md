@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: Mini-Spielabend mit verrückten Aufgaben

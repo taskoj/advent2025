@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: Mini-Geschenke-Werkstatt - Gutschein-Ideen

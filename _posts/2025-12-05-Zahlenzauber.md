@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: Zahlen-Zauber - Ergebnis 4!

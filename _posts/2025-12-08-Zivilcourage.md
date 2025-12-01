@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Zivilcourage im Kleinen

@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: fiona
 layout: post
 title: 5-Minuten-Schreibtisch-Retter

@@ -1,4 +1,4 @@
-﻿---
+---
 calendar: henri
 layout: post
 title: Minimalismus - Weniger Zeug, mehr Platz im Kopf
