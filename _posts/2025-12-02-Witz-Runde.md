@@ -30,27 +30,31 @@ Schreib diese Witze auf einzelne Zettel (oder lies sie direkt vor):
 5. „Was macht ein Pirat am Computer?“  
    → „Er drückt die Enter-Taste!“
 
-6. „Warum nimmt das Buch ein Bad?“  
-   → „Damit es ein Taschenbuch wird!“
+6. „Was macht ein Clown im Büro?“
+→ „Faxen!“
 
-7. „Was macht ein Clown im Supermarkt?“  
-   → „Er bringt die Leute zum Lachen – an der Lach-kasse.“
+7. „Was macht eine Wolke, wenn sie müde ist?“
+→ „Sie geht in den Himmelbett!“
 
-8. „Wie nennt man eine schlafende Kuh?“  
-   → „Muh-d müde.“
+8. „Wie nennt man einen Bären ohne Zähne?“
+→ „Gummibärchen!“
+
+9. „Was ist weiß und stört beim Essen?“
+→ „Eine Lawine!“
+
+10. „Was macht ein Mathematiker im Garten?“
+→ „Wurzeln ziehen!“
+
+11. „Was ist rot und steht im Wald?“
+→ „Ein Kirsch!“
+
+12. „Was ist grün, glücklich und hüpft durch den Wald?“
+→ „Eine Freudenkohl!“
 
 Du kannst natürlich noch eigene Witze dazuschreiben.
 
-## Schritt 2: Witz-Runde spielen
-
-1. Beim Abendessen oder in einem Familien-/Freundemoment zieht jede Person einen Zettel.
-2. Die Person liest den Witz laut vor.
-3. Wer will, denkt sich spontan eine noch verrücktere Pointe aus.
-
-## Schritt 3: Witz des Tages wählen
-
-Am Ende stimmt ihr ab:
+## Schritt 2: Witz des Tages wählen
 
 > „Welcher Witz war heute der beste?“
 
-Diesen „Witz des Tages“ könnt ihr an den Kühlschrank, an die Zimmertür oder ins Hausaufgabenheft kleben.
+Diesen „Witz des Tages“ kannst Du heute Deinem Vater erzählen.
