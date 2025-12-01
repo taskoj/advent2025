@@ -19,9 +19,9 @@ Bevor der Tag richtig losgeht:
 
 1. Nimm deine Tasse (Kaffee, Tee, Wasser – egal).
 2. Mit jedem Schluck benennst du **eine Sache**, für die du gerade dankbar bist.
-   - 1. Schluck: etwas in deinem Körper (z. B. „Meine Beine tragen mich“).
-   - 2. Schluck: etwas in deinem Umfeld (z. B. „Mein Bett, mein Haus“).
-   - 3. Schluck: ein Mensch in deinem Leben.
+   - Erster Schluck: etwas in deinem Körper (z. B. „Meine Beine tragen mich“).
+   - Zweiter Schluck: etwas in deinem Umfeld (z. B. „Mein Bett, mein Haus“).
+   - Dritter Schluck: ein Mensch in deinem Leben.
 
 ## Optional zum Mitnehmen
 
