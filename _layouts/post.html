@@ -68,24 +68,70 @@ layout: base
         {% include social-share.html %}
       {% endif %}
 
-      <ul class="pagination blog-pager">
-        {% if page.previous.url %}
-        <li class="page-item previous">
-          <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
-            <i class="fas fa-arrow-left" alt="Previous Post"></i>
-            <span class="d-none d-sm-inline-block">Vorheriger Eintrag</span>
-          </a>
-        </li>
+      {% comment %} Prev/Next innerhalb desselben Kalenders (page.calendar) berechnen {% endcomment %}
+      {% if page.calendar %}
+        {% assign same_calendar_posts = site.posts | where: "calendar", page.calendar %}
+        {% assign prev_post = nil %}
+        {% assign next_post = nil %}
+        {% assign index = nil %}
+        {% for p in same_calendar_posts %}
+          {% if p.url == page.url %}
+            {% assign index = forloop.index0 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% if index != nil %}
+          {% assign size = same_calendar_posts | size %}
+          {% assign prev_index = index | plus: 1 %}
+          {% assign next_index = index | minus: 1 %}
+          {% if prev_index < size %}
+            {% assign prev_post = same_calendar_posts[prev_index] %}
+          {% endif %}
+          {% if next_index >= 0 %}
+            {% assign next_post = same_calendar_posts[next_index] %}
+          {% endif %}
         {% endif %}
-        {% if page.next.url %}
-        <li class="page-item next">
-          <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
-            <span class="d-none d-sm-inline-block">Nächster Eintrag</span>
-            <i class="fas fa-arrow-right" alt="Next Post"></i>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
+
+        <ul class="pagination blog-pager">
+          {% if prev_post %}
+          <li class="page-item previous">
+            <a class="page-link" href="{{ prev_post.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{ prev_post.title | strip_html | xml_escape}}">
+              <i class="fas fa-arrow-left" alt="Previous Post"></i>
+              <span class="d-none d-sm-inline-block">Vorheriger Eintrag</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if next_post %}
+          <li class="page-item next">
+            <a class="page-link" href="{{ next_post.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{ next_post.title | strip_html | xml_escape}}">
+              <span class="d-none d-sm-inline-block">Nächster Eintrag</span>
+              <i class="fas fa-arrow-right" alt="Next Post"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      {% else %}
+        {# fallback: wenn kein calendar gesetzt ist, wie bisher page.previous/page.next verwenden #}
+        <ul class="pagination blog-pager">
+          {% if page.previous.url %}
+          <li class="page-item previous">
+            <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
+              <i class="fas fa-arrow-left" alt="Previous Post"></i>
+              <span class="d-none d-sm-inline-block">Vorheriger Eintrag</span>
+            </a>
+          </li>
+          {% endif %}
+          {% if page.next.url %}
+          <li class="page-item next">
+            <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
+              <span class="d-none d-sm-inline-block">Nächster Eintrag</span>
+              <i class="fas fa-arrow-right" alt="Next Post"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      {% endif %}
       {% include comments.html %}
     </div>
   </div>
