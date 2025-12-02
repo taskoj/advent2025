@@ -10,7 +10,7 @@ author: Arnd
 ---
 
 **Privilegien** sind Vorteile, die man hat, ohne etwas Besonderes dafür getan zu haben.  
-Zum Beispiel: 
+Zum Beispiel:  
 - Eltern, die beim Lernen helfen können
 - kein Geldstress zuhause
 - keine Diskriminierung wegen Name, Hautfarbe, Religion oder Geschlecht
