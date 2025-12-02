@@ -51,7 +51,12 @@ layout: base
         <div class="blog-tags">
           <span>Tags:</span>
           {% for tag in page.tags %}
-            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+            {% assign tag_slug = tag | slugify %}
+            {% if page.calendar %}
+              <a href="{{ ('/' | append: page.calendar | append: '/tags') | relative_url }}#{{ tag_slug }}">{{- tag -}}</a>
+            {% else %}
+              <a href="{{ '/tags' | relative_url }}#{{ tag_slug }}">{{- tag -}}</a>
+            {% endif %}
           {% endfor %}
         </div>
       {% endif %}
