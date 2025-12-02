@@ -28,7 +28,6 @@ Renders a section per tag that contains posts for the given calendar.
               {% for post in tag_posts %}
               <li>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                <small class="text-muted"> — {{ post.date | date: site.date_format }}</small>
               </li>
               {% endfor %}
             </ul>
@@ -61,7 +60,7 @@ Renders a section per tag that contains posts for the given calendar.
         // page heading H1 in header include
         var pageHeading = document.querySelector('.page-heading h1');
         if (pageHeading) {
-          pageHeading.textContent = 'Treffer zum Stichwort ' + tagTitle;
+          pageHeading.textContent = 'Advent 2025';
         }
 
         // Ensure subtitle remains the calendar subtitle (already set in front matter), so do not change it
