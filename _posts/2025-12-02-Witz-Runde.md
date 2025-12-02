@@ -16,7 +16,7 @@ Heute geht alles ums Lachen – mit einer Witz-Runde, für die du direkt loslege
 Schreib diese Witze auf einzelne Zettel (oder lies sie direkt vor):
 
 1. „Was macht ein Keks unter einem Baum?“  
-   → „Krümel!“
+   → „Krümel!“ 
 
 2. „Warum können Skelette so schlecht lügen?“  
    → „Weil man direkt durch sie hindurchsieht!“
