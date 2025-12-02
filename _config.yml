@@ -4,6 +4,9 @@ paginate: 8
 excerpt_length: 20
 post_search: true
 
+# Explicit build destination to avoid toolchains changing working dir to `docs`
+destination: "_site"
+
 # For GitHub Pages under a project page (https://username.github.io/advent)
 # set `url` to your site root and `baseurl` to the repo name.
 url: "https://taskoj.github.io"
